@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 export const Profile: FC = () => {
     return (
         <Wrapper>
-            Profile
+            Tekst
         </Wrapper>
     );
 };

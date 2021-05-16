@@ -3,12 +3,12 @@ import portrair2 from  './portrair2.jpg';
 
 export const Accounts = [
     {
-        name: 'Johm wick',
+        name: 'John Wick',
         image: portrair1,
 
     },
     {
-        name: 'Jan Mas',
+        name: 'Jim Last',
         image: portrair2,
     },
 

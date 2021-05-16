@@ -7,7 +7,7 @@ import {fontSize} from '../../styledHelpers/FontSizes';
 const Wrapper = styled.div`
     width:220px;
     margin:10px 40px 0 0;
-    font-size:${fontSize[24]};
+    font-size:${fontSize[18]};
 `;
 
 
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 export const Mock: FC = () => {
     return (
         <Wrapper>
-            Mock
+            Routing
         </Wrapper>
     );
 };
