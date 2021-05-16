@@ -1,13 +1,39 @@
 import {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
-
+import {fontSize} from '../../styledHelpers/FontSizes';
 import {Wrapper} from '../../styledHelpers/Components';
+import {SingleWorkspaceWindow} from './SingleWorkspaceWindow';
+
+const InnerWrapper = styled.div`
+    max-width:850px;
+`;
+
+const Name = styled.p`
+    margin-top:20px;
+    margin-left:10px;
+    font-size:${fontSize[24]};
+
+`;
+
+const Slider = styled.div`
+    overflow-x:scroll;
+    display: flex;
+`;
 
 export const Workspaces: FC = () => {
     return (
-        <Wrapper>
+        <InnerWrapper>
+            <Name>Workspaces</Name>
+            <Slider>
+                <SingleWorkspaceWindow></SingleWorkspaceWindow>
+                <SingleWorkspaceWindow></SingleWorkspaceWindow>
+                <SingleWorkspaceWindow></SingleWorkspaceWindow>
+                <SingleWorkspaceWindow></SingleWorkspaceWindow>
+                <SingleWorkspaceWindow></SingleWorkspaceWindow>
 
-        </Wrapper>
+            </Slider>
+
+        </InnerWrapper>
     );
 };

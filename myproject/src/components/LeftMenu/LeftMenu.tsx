@@ -5,9 +5,17 @@ import { Colors } from '../../styledHelpers/Colors';
 import { Wrapper } from '../../styledHelpers/Components';
 import { LeftNav } from '../LeftNav/LeftNav';
 
+const Wrapper1 = styled.div`
+    max-width:220px;
+    margin:0 40px 0 0;
+`;
+
+
+
+
 const InnerWrapper = styled.div`
     border-radius: 10px;
-    width: 240px;
+    width: 220px;
     min-height: 240px;
     text-align: center;
     background: ${Colors.white};
@@ -43,6 +51,8 @@ const PersonInfo = styled.div`
 
 const PersonDetails = styled.div`
     display:grid;
+    margin-top:10px;
+ padding-bottom:10px;
     grid-template-columns:20% 60% 20%;
     align-items:center;
     .leftImgs{
@@ -71,9 +81,9 @@ const PersonDetails = styled.div`
 
 
 
-export const LeftMenu: FC = () => {
+export const LeftMenu: FC = (props) => {
     return (
-        <Wrapper>
+        <Wrapper1>
             <InnerWrapper>
                 <PersonInfo>
                     <img id="foto" src="./media/icons/wick.jpg" />
@@ -93,6 +103,6 @@ export const LeftMenu: FC = () => {
             <LeftNav>
 
             </LeftNav>
-        </Wrapper>
+        </Wrapper1>
     );
 };

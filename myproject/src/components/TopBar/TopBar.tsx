@@ -1,30 +1,32 @@
-import { FC } from 'react';
+import {FC} from 'react';
 import styled from 'styled-components';
-import { Colors } from '../../styledHelpers/Colors';
+import {Colors} from '../../styledHelpers/Colors';
+import {fontSize} from '../../styledHelpers/FontSizes';
 
 import useDropdown from 'react-dropdown-hook';
 
-import { Wrapper } from '../../styledHelpers/Components';
-import { ExpandedMenu } from './ExpandedMenu';
+import {Wrapper} from '../../styledHelpers/Components';
+import {ExpandedMenu} from './ExpandedMenu';
+import {Link} from "react-router-dom";
 
 const Wrapper2 = styled(Wrapper)`
-    background-color: #f3efef;
-    box-shadow: 1px 2px 5px #0c0c0c;
+    background: ${Colors.white};
+    box-shadow: 1px 2px 10px ;
+    justify-content: center;
+    margin-bottom:20px;
 `;
 
 const InnerWrapper = styled.div`
     width: 1200px;
-    background: ${Colors.white};
     display:grid;
-    grid-template-columns:70px 1fr 3fr 1fr;
+    grid-template-columns:80px 1fr 1fr 1fr;
     align-items: center;
     min-height:8vh;
-    padding-bottom:5px;
 `;
 
 const LogoImg = styled.img`
-    margin:10px;
-    width: 30px;
+    margin:4px;
+    width: 46px;
 `;
 
 const Menuwrapper = styled.div`
@@ -32,13 +34,13 @@ const Menuwrapper = styled.div`
     align-items:center;
     width:250px;
     justify-content:space-between;
-    padding:6px;
+    padding:8px;
 `;
 
 const LeftSide = styled.div`
-    margin:6px;
+    margin:8px;
     span{
-        font-size:15px;
+        font-size: ${fontSize[20]};
         margin-right:80px;
     }
     #arrowDown{
@@ -46,12 +48,12 @@ const LeftSide = styled.div`
     }
 `;
 
-const InputWrapper = styled.div`
+const InputWrapper=styled.div`
     display:flex;
     align-items:center;
-    padding:8px;
-    width:400px;
-    border:1px solid lightgray;
+    padding:2px;
+    width:600px;
+    border:1px solid ;
     border-radius:11px;
 `;
 
@@ -61,7 +63,8 @@ const CustomInput = styled.input`
     width:100%;
     padding:4px;
     margin: 0 20px 0 0;
-    font-size:15px;
+    font-size: ${fontSize[20]};
+
     &:outline{
         outline:none;
     }
@@ -72,15 +75,24 @@ const CustomInput = styled.input`
 
 const RightIcons = styled.div`
     margin-left: auto;
-    margin-right:14px;
+    a{
+        text-decoration:none;
+    }
+
+    .rightIcons{
+        :hover{
+        background: white;
+        }
+    }
 `;
 
 const CustomImg = styled.img`
-    margin: 0 12px 0 12px;
+    margin: 0 16px 0 16px;
+    cursor:pointer;
 `;
 
 
-export const TopBar: FC = () => {
+export const TopBar: FC = ()  => {
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
 
     const menuHandler = () => {
@@ -90,28 +102,28 @@ export const TopBar: FC = () => {
     return (
         <Wrapper2>
             <InnerWrapper>
-                <LogoImg src="./media/logo.png" alt="" />
+                <LogoImg src="./media/logo.png" alt=""/>
                 <Menuwrapper ref={wrapperRef}>
                     <LeftSide onClick={menuHandler}>
-                        <CustomImg src="./media/icons/house2.png" />
+                        <CustomImg src="./media/icons/house2.png"/>
                         <span>Home</span>
-                        <CustomImg id="arrowDown" src="./media/icons/arrow-down.png" alt="" />
+                        <CustomImg id="arrowDown" src="./media/icons/arrow-down.png" alt=""/>
                     </LeftSide>
 
                     {dropdownOpen &&
-                        <ExpandedMenu />
+                        <ExpandedMenu/>
                     }
-                </Menuwrapper>
+                    </Menuwrapper>
 
                 <InputWrapper>
-                    <CustomInput type="text" placeholder="Search" />
-                    <CustomImg src="./media/icons/search.png" alt="" />
+                    <CustomInput type="text" placeholder="Search"/>
+                    <CustomImg src="./media/icons/search.png" id="search" alt=""/>
                 </InputWrapper>
 
                 <RightIcons>
-                    <CustomImg src="./media/icons/house.png" />
-                    <CustomImg src="./media/icons/comments.png" />
-                    <CustomImg src="./media/icons/bell.png" />
+                    <Link to="/"> <CustomImg className="rightIcons" src="./media/icons/house.png"/> </Link>
+                    <Link to="/mock"> <CustomImg className="rightIcons" src="./media/icons/comments.png"/> </Link>
+                    <Link to="/mock"><CustomImg className="rightIcons" src="./media/icons/bell.png"/> </Link>
                 </RightIcons>
             </InnerWrapper>
         </Wrapper2>
