@@ -5,7 +5,7 @@ import {Colors} from '../../styledHelpers/Colors';
 import {Wrapper} from '../../styledHelpers/Components';
 
 const InnerWrapper = styled.div`
-    width: 250px;
+    width: 200px;
     display:grid;
     grid-template-columns:25% 75%;
     align-items:center;

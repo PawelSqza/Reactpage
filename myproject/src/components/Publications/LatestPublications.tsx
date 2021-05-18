@@ -23,7 +23,7 @@ const RightSide = styled.div`
     margin-left:10px;
     margin-right:30px;
     span{
-        font-size:${fontSize[14]};
+        font-size:${fontSize[12]};
     }
 `;
 
@@ -36,10 +36,11 @@ const BottomSide = styled.div`
     }
     .middle {
     width:30px;
-    border-radius:50%;
+    border-radius:20%;
     }
     .right{
-
+        
+        
     }
 
 `;

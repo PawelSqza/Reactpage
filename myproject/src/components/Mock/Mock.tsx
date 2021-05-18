@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 export const Mock: FC = () => {
     return (
         <Wrapper>
-            Routing
+            Test
         </Wrapper>
     );
 };

@@ -13,7 +13,7 @@ const Wrapper2 = styled(Wrapper)`
     background: ${Colors.white};
     box-shadow: 1px 2px 10px ;
     justify-content: center;
-    margin-bottom:20px;
+    margin-bottom:10px;
 `;
 
 const InnerWrapper = styled.div`
@@ -25,8 +25,8 @@ const InnerWrapper = styled.div`
 `;
 
 const LogoImg = styled.img`
-    margin:4px;
-    width: 46px;
+    margin:8px;
+    width: 35px;
 `;
 
 const Menuwrapper = styled.div`
@@ -41,7 +41,7 @@ const LeftSide = styled.div`
     margin:8px;
     span{
         font-size: ${fontSize[20]};
-        margin-right:80px;
+        margin-right:60px;
     }
     #arrowDown{
        margin-bottom:2px;
@@ -52,7 +52,7 @@ const InputWrapper=styled.div`
     display:flex;
     align-items:center;
     padding:2px;
-    width:600px;
+    width:500px;
     border:1px solid ;
     border-radius:11px;
 `;

@@ -11,24 +11,26 @@ const Wrapper = styled.div`
     padding-top:10px;
     margin-left:24px;
     box-shadow: 1px 2px 10px ;
-    width:200px;
+    width:220px;
     a{
         text-decoration:none;
         color:${Colors.black};
     }
     ul{
-        font-size:${fontSize[16]};
+        font-size:${fontSize[14]};
+        
     }
     li{
         margin-top:10px;
         margin-bottom:10px;
+        margin-left: 5px;
 
     }
     .icons{
-        margin-right:20px;
+        margin-right:25px;
     }
     .category{
-            font-size:${fontSize[12]};
+            font-size:${fontSize[14]};
             color:blue;
 
         }
@@ -55,6 +57,7 @@ const Account = styled.div`
     border-bottom:1px solid ;
     align-items: center;
     #portrair{
+        margin-left:10px;
         width:28px;
         border-radius:90px;
         grid-column: 1;

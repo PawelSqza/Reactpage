@@ -17,7 +17,8 @@ const Name = styled.div`
 `;
 
 const RightSide = styled.div`
-    float:right;
+    float:center;
+
 `;
 
 export const ResumeYourWork: FC = () => {
@@ -26,10 +27,10 @@ export const ResumeYourWork: FC = () => {
             <Name>
                 Resume your work
                 <RightSide>
-                    <input type="text" placeholder="Filter by title..."/>
+                    <input type="text" placeholder="Filter ..."/>
                     <img src="./media/icons/search.png" id="search" alt=""/>
                     <img src="./media/icons/ecosystem.png"/>
-                    Followed
+                    
                     <img src="./media/icons/arrow-down.png" alt=""/>
                 </RightSide>
 
