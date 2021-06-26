@@ -5,10 +5,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 }   from "react-router-dom";
-
-
 
 import {TopBar} from '../TopBar/TopBar';
 import {LeftMenu} from '../LeftMenu/LeftMenu';
@@ -23,13 +20,13 @@ import {Mock} from '../Mock/Mock';
 
 const Wrapper = styled.section`
     background: #F5F7F9;
-    font-family: Arial,  sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Helvetica, sans-serif;
 `;
 
 const Content = styled.div`
     max-width:1200px;
     display:flex;
-    margin: 0  auto;
+    margin: 0 auto;
 `;
 
 const RightSide = styled.div`
@@ -44,19 +41,31 @@ const MainPage: FC = () => {
                     <LeftMenu/>
                         <RightSide>
                             <Switch>
-                                <Route path="/entities">
+                                <Route path="/entities" exact>
                                     <Entities/>
                                 </Route>
-                                <Route path="/profile">
+                                <Route path="/profile" exact>
                                     <Profile/>
                                 </Route>
-                                <Route path="/workspaces">
-                                    <WorkspacesMain/>
+                                <Route path="/client_contract" exact>
+                                    <WorkspacesMain type="0"/>
                                 </Route>
-                                <Route path="/mock">
+                                <Route path="/supplier_contract" exact>
+                                    <WorkspacesMain type="1"/>
+                                </Route>
+                                <Route path="/corporate" exact>
+                                    <WorkspacesMain type="2"/>
+                                </Route>
+                                <Route path="/group_norms" exact>
+                                    <WorkspacesMain type="3"/>
+                                </Route>
+                                <Route path="/real_estate_contracts" exact>
+                                    <WorkspacesMain type="4"/>
+                                </Route>
+                                <Route path="/mock" exact>
                                     <Mock/>
                                 </Route>
-                                <Route path="/">
+                                <Route path="/" exact>
                                     <Publications/>
                                     <Workspaces/>
                                     <ResumeYourWork/>
@@ -70,29 +79,3 @@ const MainPage: FC = () => {
 };
 
 export default MainPage;
-// import {TopBar} from '../TopBar/TopBar';
-// import {LeftMenu} from '../LeftMenu/LeftMenu';
-// import {Articles} from '../Articles/Articles';
-// import {Workspaces} from '../Workspaces/Workspaces';
-// 
-// const Wrapper = styled.section`
-// `;
-// 
-// const Content = styled.div`
-    /* margin-top:4px; */
-// `;
-// 
-// const MainPage: FC = () => {
-    // return (
-        // <Wrapper>
-            {/* <TopBar/> */}
-            {/* <Content> */}
-                {/* <LeftMenu/> */}
-                {/* <Articles/> */}
-                {/* <Workspaces/> */}
-            {/* </Content> */}
-        {/* </Wrapper> */}
-    // );
-// };
-// 
-// export default MainPage;

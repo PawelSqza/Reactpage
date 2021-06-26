@@ -1,67 +1,123 @@
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-import {Wrapper} from '../../styledHelpers/Components';
+import {Link} from 'react-router-dom';
+
+//#endregion import data from api
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { getUsers, getPhotos, getPosts } from '../../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
+
+type GetUsers = ReturnType<typeof getUsers>
+type GetPhotos = ReturnType<typeof getPhotos>
+type GetPosts = ReturnType<typeof getPosts>
+//#endregion
+
+//#region styles
+
+const Wrapper = styled.div`
+    display:flex;
+    flex-direction: column;
+`;
+
 
 const InnerWrapper = styled.div`
-    display:flex;
-    align-items:center;
-    margin-top:25px;
-    margin-bottom:15px;
+    margin-top:8px;
+    margin-bottom:5px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    position: relative;
+
+    a{
+        text-decoration:none;
+        color: ${Colors.black};
+    }
+
+    .leftImg{
+        max-width:80px;
+        max-height:80px;
+    }
+
+    .rightSide{
+        margin-left:10px;
+        max-height:80px;
+    }
+
+    h1{
+        ::first-letter {
+            text-transform: uppercase;
+            }
+        word-spacing: 5px;
+        margin-top: 10px;
+    }
+
+    .bottom{
+        display: flex;
+        align-items: center;
+        font-size: ${fontSize[14]};
+        position: absolute;
+        bottom: 0;
+        left: 90;
+    }
+
+    .date{
+        white-space: nowrap;
+        color: ${Colors.lightgrayOriginal};
+    }
+
+    .portrairImg{
+        width:20px;
+        border-radius: 50%;
+        margin:0 10px;
+
+    }
+
+    .name{
+        white-space: nowrap;
+
+    }
 
 `;
 
-const LeftSide = styled.div`
-
-    img{
-        width:90px;
-    }
-`;
-
-const RightSide = styled.div`
-    margin-left:10px;
-    margin-right:30px;
-    span{
-        font-size:${fontSize[12]};
-    }
-`;
-
-const BottomSide = styled.div`
-    display:grid;
-    grid-template-columns:80px 40px 80px;
-    align-items:center;
-    .left {
-
-    }
-    .middle {
-    width:30px;
-    border-radius:20%;
-    }
-    .right{
-        
-        
-    }
-
-`;
+//#endregion
 
 export const LatestPublications: FC = () => {
-    return (
-            <InnerWrapper>
-                <LeftSide>
-                    <img src="./imgs/write1.jpg" />
-                </LeftSide>
-                <RightSide>
-                <h1>
-                    Lorem ipsum dolor sit amet, consecteur adipisiscing elit.
-                </h1>
-                    <BottomSide>
-                        <span className="left">11 may. 2021</span>
-                        <img className="middle" src="./imgs/portrair1.jpg"/>
-                        <span className="right">Dave Smith</span>
-                    </BottomSide>
-                </RightSide>
 
-            </InnerWrapper>
+    const { usersList, usersPhoto, usersPost } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users
+    }))
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch<GetUsers>(getUsers());
+        dispatch<GetPhotos>(getPhotos());
+        dispatch<GetPosts>(getPosts());
+    }, [dispatch]);
+
+    return (
+        <Wrapper>
+
+            {usersPost.slice(0,3).map((x:any) =>{
+                return(
+                    <InnerWrapper>
+                        <Link to="/mock"><img className="leftImg" src={usersPhoto[x.userId]?.url} alt="Post img"/></Link>
+                        <div className="rightSide">
+                            <h1><Link to="/mock">{x?.title}</Link></h1>
+                            <div className="bottom">
+                                <span className="date">25 may. 2021</span>
+                                <img className="portrairImg" src={usersPhoto[x.userId]?.url} alt="Portrair1 img"/>
+                                <span className="name">{usersList[x.userId]?.name}</span>
+                            </div>
+                        </div>
+                    </InnerWrapper>
+                )
+            })}
+
+        </Wrapper>
+
+
     );
 };

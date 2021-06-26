@@ -1,47 +1,73 @@
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-import {Wrapper} from '../../styledHelpers/Components';
-import {LatestPublications} from './LatestPublications';
+import {boxShadow} from '../../styledHelpers/Components';
 
+import {LatestPublications} from './LatestPublications';
+import { Link } from 'react-router-dom';
+
+//#region import data from api
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { getUsers, getPhotos, getPosts } from '../../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
+
+type GetUsers = ReturnType<typeof getUsers>
+type GetPhotos = ReturnType<typeof getPhotos>
+type GetPosts = ReturnType<typeof getPosts>
+//#endregion
+
+//#region styles
 const InnerWrapper = styled.div`
     max-width:940px;
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
-    box-shadow: 1px 2px 10px ;
+    background-color: ${Colors.white};
+    ${boxShadow()};
 `;
 
 const LeftSide = styled.div`
     width:300px;
     height:340px;
     grid-column:1;
-    background-image: url("./imgs/city2.png");
+    background-image: url("./media/imgs/city2.png");
     background-position: center;
     background-size: cover;
     color: ${Colors.white};
 
     #divBottom{
         font-size:${fontSize[18]};
-        margin:220px 20px 0px 20px;
+        padding-top:220px;
+        margin:0 0 25px 20px;
 
+        a{
+            text-decoration: none;
+            color: ${Colors.white};
+        }
+
+        p{
+            ::first-letter {
+                text-transform: uppercase;
+            }
+            line-height: 22px;
+        }
         #personInfo{
-            margin-top:15px;
+            margin-top:10px;
             font-size:${fontSize[14]};
-            display:grid;
-            grid-template-columns:80px 1fr 140px;
+            display:flex;
             align-items:center;
             .left{
-                grid-column:1;
+                white-space: nowrap;
             }
             .middle{
-                grid-column:2;
                 border-radius:50%;
-                width:30px;
+                width:20px;
+                margin:0 10px;
             }
             .right{
-                grid-column:3;
+                white-space: nowrap;
             }
         }
     }
@@ -49,51 +75,72 @@ const LeftSide = styled.div`
 
 const RightSide = styled.div`
     grid-column:2;
+    max-height:400px;
     margin-top:5px;
     margin-left:20px;
     align-items:Center;
 
+    #content{
+        /* overflow-y:scroll; */
+        max-height: 280px;
+    }
+
     span#title{
-        font-size:${fontSize[18]};
+        font-size:${fontSize[20]};
     }
 
     .btn{
         background:none;
         border:none;
-        font-size:${fontSize[18]};
+        font-size:${fontSize[16]};
         cursor:pointer;
-        
+        color:${Colors.purple};
+        margin-top:8px;
     }
 
 `;
+//#endregion
 
 export const Publications: FC = () => {
+
+    const { usersList, usersPhoto, usersPost } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users
+    }))
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch<GetUsers>(getUsers());
+        dispatch<GetPhotos>(getPhotos());
+        dispatch<GetPosts>(getPosts());
+    }, [dispatch]);
+
     return (
         <InnerWrapper>
             <LeftSide>
-                <div id="divBottom">
-                    <p>
-                    Lorem ipsum dolor sit amet,
-                    consecteur adipisiscing elit
-                    
-                    </p>
+                {usersPost.slice(0,1).map((x:any) => {
+                    return(
+                        <div id="divBottom">
+                            <p><Link to="/mock">{x?.title}</Link></p>
 
-                    <div id="personInfo">
-                        <span className="left">11 may. 2021</span>
-                        <img className="middle" src="./imgs/portrair1.jpg"/>
-                        <span className="right">Dave Smith</span>
-                    </div>
+                            <div id="personInfo">
+                                <span className="left">25 june 2021</span>
+                                <img className="middle" src={usersPhoto[x.userId]?.url} alt="User portrair"/>
+                                <span className="right">{usersList[x.userId]?.name}</span>
+                            </div>
 
-                </div>
+                        </div>
+                    )
+                })}
             </LeftSide>
             <RightSide>
                 <span id="title">Latest publications</span>
 
-                <LatestPublications></LatestPublications>
-                <LatestPublications></LatestPublications>
-                <LatestPublications></LatestPublications>
+                <div id="content">
+                    <LatestPublications/>
+                </div>
 
-                <button type="button" className="btn">See more publications</button>
+                <Link to="/mock"><button type="button" className="btn">See more publications</button></Link>
 
             </RightSide>
         </InnerWrapper>

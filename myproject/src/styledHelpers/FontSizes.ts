@@ -1,5 +1,3 @@
-
-
 export const fontSize = {
     10: '0.6rem',
     12: '0.74rem',
