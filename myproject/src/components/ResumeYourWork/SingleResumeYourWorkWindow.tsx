@@ -40,13 +40,13 @@ export const SingleResumeYourWorkWindow: FC = () => {
             <h1>World company SAS</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing  </p>
             <Bottom>
-                <img src="./media/logo.png"/>
+                <img src="./media/imgs/logo.png"/>
                 <span>abb. corp. </span>
                 &#9679;
-                <img src="./imgs/write.png"/>
+                <img src=".media/imgs/write.png"/>
                 <span>Corporate</span>
                 &#9679;
-                Updated 1 days ago by Lee Ann
+                Updated 1 days ago by Jee Ben
 
             </Bottom>
         </InnerWrapper>

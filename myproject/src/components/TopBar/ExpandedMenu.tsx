@@ -4,7 +4,7 @@ import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {Link} from "react-router-dom";
 
-//#region import data from api
+// import data from api
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
 import { getUsers, getPhotos } from '../../actions/userActions';
@@ -12,9 +12,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 type GetUsers = ReturnType<typeof getUsers>
 type GetPhotos = ReturnType<typeof getPhotos>
-//#endregion
 
-//#region styles
+
+
 const Wrapper = styled.div`
     position: absolute;
     background: ${Colors.white};
@@ -139,7 +139,7 @@ export const ExpandedMenu: FC = () => {
         const text= e.target.value;
         setInputText(text);
     }
-    //#endregion
+    
 
     return (
         <Wrapper>
@@ -183,7 +183,7 @@ export const ExpandedMenu: FC = () => {
                     }
                     {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/supplier_contract">
-                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="foty"/>Supplier contract</li>
+                    <li className="singleRow"><img src="./media/icons/entities2.png" className="icons" alt="foty"/>Supplier contract</li>
                     </Link>
                     }
                     {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&

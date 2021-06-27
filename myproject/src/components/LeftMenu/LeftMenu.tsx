@@ -7,7 +7,7 @@ import {boxShadow} from '../../styledHelpers/Components';
 
 import {LeftNav} from './LeftNav';
 
-//#region import data from api
+// import data from api
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
 import { getUsers, getPhotos } from '../../actions/userActions';
@@ -15,9 +15,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 type GetUsers = ReturnType<typeof getUsers>
 type GetPhotos = ReturnType<typeof getPhotos>
-//#endregion
 
-//#region styles
+
+
 const Wrapper3 = styled.div`
     max-width:220px;
     margin:0 40px 0 0;

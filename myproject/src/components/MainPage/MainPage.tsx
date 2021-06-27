@@ -19,7 +19,7 @@ import {WorkspacesMain} from '../Workspaces/WorkspacesMain';
 import {Mock} from '../Mock/Mock';
 
 const Wrapper = styled.section`
-    background: #F5F7F9;
+    background: #f4f6f8;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Helvetica, sans-serif;
 `;
 

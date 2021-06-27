@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {Colors} from '../../styledHelpers/Colors';
 
 
-//#region import data from api
+// import data from api
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
 import { getUsers, getPhotos } from '../../actions/userActions';
@@ -13,9 +13,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 type GetUsers = ReturnType<typeof getUsers>
 type GetPhotos = ReturnType<typeof getPhotos>
-//#endregion
 
-//#region styles
+
+
 const Wrapper = styled.div`
     width:940px;
     margin:10px 40px 10px 0;

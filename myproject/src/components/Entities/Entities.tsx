@@ -255,7 +255,7 @@ export const Entities: FC = () => {
     const [src1, setSrc1] = useState(srcImg[0]);
     const [size, SetSize] = useState(true);
 
-    //#region dropDownMenu
+    // dropDownMenu
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
     const [wrapperRef2, dropdownOpen2, toggleDropdown2] = useDropdown();
     const [wrapperRef3, dropdownOpen3, toggleDropdown3] = useDropdown();
@@ -271,7 +271,7 @@ export const Entities: FC = () => {
     const menuHandler3 = () => {
         toggleDropdown3();
     };
-    //#endregion
+    
 
     const { usersPhoto, usersPost } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
@@ -285,7 +285,7 @@ export const Entities: FC = () => {
         dispatch<GetPosts>(getPosts());
     }, [dispatch]);
 
-    //#region search function
+    
 
     const [inputText, setInputText] = useState<string>('');
 
@@ -293,7 +293,7 @@ export const Entities: FC = () => {
         const text= e.target.value;
         setInputText(text);
     }
-    //#endregion
+    
 
     const nonMosaicLook = () => {
         const x = document.getElementById('contentContainer');
@@ -424,7 +424,7 @@ export const Entities: FC = () => {
                                     </div>
                                     <div id="right">
                                         <p className="title">{x?.title}</p>
-                                        <p className="bottomInfo">Tokio 66990, District , Japan</p>
+                                        <p className="bottomInfo">Tokio 66990 , Japan</p>
                                     </div>
                                 </div>
                         )
