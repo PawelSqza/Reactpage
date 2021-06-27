@@ -7,7 +7,7 @@ import {boxShadow} from '../../styledHelpers/Components';
 import {LatestPublications} from './LatestPublications';
 import { Link } from 'react-router-dom';
 
-//#region import data from api
+// import data from api
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
 import { getUsers, getPhotos, getPosts } from '../../actions/userActions';
@@ -16,9 +16,9 @@ import { useDispatch, useSelector } from 'react-redux';
 type GetUsers = ReturnType<typeof getUsers>
 type GetPhotos = ReturnType<typeof getPhotos>
 type GetPosts = ReturnType<typeof getPosts>
-//#endregion
 
-//#region styles
+
+
 const InnerWrapper = styled.div`
     max-width:940px;
     display:grid;
@@ -99,7 +99,7 @@ const RightSide = styled.div`
     }
 
 `;
-//#endregion
+
 
 export const Publications: FC = () => {
 

@@ -5,7 +5,7 @@ import {fontSize} from '../../styledHelpers/FontSizes';
 
 import {Link} from "react-router-dom";
 
-//#region styles
+
 const InnerWrapper = styled.div`
     display:grid;
     grid-template-columns:26% 1fr;
@@ -33,7 +33,7 @@ const InnerWrapper = styled.div`
         cursor:pointer;
     }
 `;
-//#endregion
+
 
 export const LeftNav: FC = () => {
     return (

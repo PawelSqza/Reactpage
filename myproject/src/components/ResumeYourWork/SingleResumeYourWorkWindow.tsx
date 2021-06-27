@@ -2,7 +2,7 @@ import {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-import {Wrapper} from '../../styledHelpers/Components';
+//import {Wrapper} from '../../styledHelpers/Components';
 
 const InnerWrapper = styled.div`
     background: ${Colors.white};
@@ -37,7 +37,7 @@ const Bottom = styled.div`
 export const SingleResumeYourWorkWindow: FC = () => {
     return (
         <InnerWrapper>
-            <h1>World company SAS</h1>
+            <h1>World compa</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing  </p>
             <Bottom>
                 <img src="./media/imgs/logo.png"/>

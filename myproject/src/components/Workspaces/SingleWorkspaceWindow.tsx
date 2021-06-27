@@ -21,7 +21,7 @@ const Box = styled.div`
 `;
 
 const CustomImage = styled.img`
-    width:238px;
+    width:220px;
 `;
 
 const Icon = styled.div`
@@ -80,7 +80,7 @@ export const SingleWorkspaceWindow: FC = () => {
                             <span>&#9679;</span>
                             <img src="./media/icons/people.png" alt="People icon"/>
                             150 users
-                            <p>Last update 2 day ago</p>
+                            <p>Last update 5 day ago</p>
                         </AndUsers>
                 </Box>
                 </Link>
@@ -149,7 +149,7 @@ export const SingleWorkspaceWindow: FC = () => {
                         <AndUsers>
                             <img src="./media/icons/book.png" alt="Writing img cloud"/>
                             Norms
-                            <span>&#c37f9699;</span>
+                            <span>&#9679;</span>
                             <img src="./media/icons/people.png" alt="People icon"/>
                             25 users
                             <p>Last update 1 day ago</p>

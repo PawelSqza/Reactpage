@@ -170,7 +170,7 @@ export const ExpandedMenu: FC = () => {
                     }
                     {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/mock">
-                    <li className="singleRow"><img src="./media/icons/administration.png" className="icons" alt="fotosy"/>Administration</li>
+                    <li className="singleRow"><img src="./media/icons/administration.png" className="icons" alt="foty"/>Administration</li>
                     </Link>
                     }
 

@@ -106,7 +106,7 @@ const PersonDetails=styled.div`
     }
 
 `;
-//#endregion
+
 
 export const LeftMenu: FC = () => {
 

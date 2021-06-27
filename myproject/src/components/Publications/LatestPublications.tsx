@@ -4,7 +4,7 @@ import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {Link} from 'react-router-dom';
 
-//#endregion import data from api
+// import data from api
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
 import { getUsers, getPhotos, getPosts } from '../../actions/userActions';
@@ -80,7 +80,6 @@ const InnerWrapper = styled.div`
 
 `;
 
-//#endregion
 
 export const LatestPublications: FC = () => {
 
@@ -99,7 +98,7 @@ export const LatestPublications: FC = () => {
     return (
         <Wrapper>
 
-            {usersPost.slice(0,3).map((x:any) =>{
+            {usersPost.slice(3,6).map((x:any) =>{
                 return(
                     <InnerWrapper>
                         <Link to="/mock"><img className="leftImg" src={usersPhoto[x.userId]?.url} alt="Post img"/></Link>

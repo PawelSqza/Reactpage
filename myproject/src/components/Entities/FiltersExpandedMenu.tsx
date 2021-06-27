@@ -54,7 +54,7 @@ export const FiltersExpandedMenu: FC = () => {
 
     return (
         <Wrapper>
-            <p id="topP"> Rows are filtered by the following conditions starting from the top.</p>
+            <p id="topP"> Rows are filtered .</p>
             <Content>
                 <img src="./media/icons/cross.png" alt="Cross icon"/>
                 <p>Where</p>

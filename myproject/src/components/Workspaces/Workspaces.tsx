@@ -24,7 +24,8 @@ const InnerWrapper = styled.div`
     }
 
      .SwiperSlide{
-
+         display:flex;
+         overflow:hidden;
     } 
 `;
 
