@@ -1,9 +1,9 @@
 import {FC} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
-//import {Colors} from '../../styledHelpers/Colors';//
+
 import {fontSize} from '../../styledHelpers/FontSizes';
-// import {Wrapper} from '../../styledHelpers/Components';
+
 import {boxShadow} from '../../styledHelpers/Components';
 import {SingleWorkspaceWindow} from './SingleWorkspaceWindow';
 import SwiperCore, { EffectFade } from 'swiper';

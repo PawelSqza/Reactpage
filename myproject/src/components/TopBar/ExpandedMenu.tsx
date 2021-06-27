@@ -84,8 +84,8 @@ const Account = styled.div`
         font-weight:bold;
     }
     #portrair{
-        width:20px;
-        border-radius:90px;
+        width:25px;
+        border-radius:50px;
         grid-column: 1;
         grid-row: 1;
         margin-left:18px;
@@ -94,14 +94,14 @@ const Account = styled.div`
         grid-column: 2;
         grid-row: 1;
         margin-bottom:30px;
-        font-size: ${fontSize[12]};
+        font-size: ${fontSize[14]};
         white-space: nowrap;
     }
     #see{
         grid-column: 2;
         grid-row: 1;
         margin-top:30px;
-        font-size:${fontSize[12]};
+        font-size:${fontSize[10]};
         white-space: nowrap;
     }
 
@@ -116,7 +116,7 @@ const Logout = styled.div`
         padding-right:16px;
     }
 `;
-//#endregion
+
 
 export const ExpandedMenu: FC = () => {
 
@@ -131,7 +131,7 @@ export const ExpandedMenu: FC = () => {
         dispatch<GetPhotos>(getPhotos());
     }, [dispatch]);
 
-    //#region search function
+    // search function
 
     const [inputText, setInputText] = useState<string>('');
 
@@ -150,22 +150,22 @@ export const ExpandedMenu: FC = () => {
                     <li className="category">Platform</li>
                     {'Home'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/">
-                    <li className="singleRow"><img src="./media/icons/house2.png" className="icons" alt="fotosy"/>Home</li>
+                    <li className="singleRow"><img src="./media/icons/house2.png" className="icons" alt="foty"/>Home</li>
                     </Link>
                     }
                     {'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/mock">
-                    <li className="singleRow"><img src="./media/icons/publications.png" className="icons" alt="fotosy"/>Publications</li>
+                    <li className="singleRow"><img src="./media/icons/publications.png" className="icons" alt="foty"/>Publications</li>
                     </Link>
                     }
                     {'People'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/mock">
-                    <li className="singleRow"><img src="./media/icons/people.png" className="icons" alt="fotosy"/>People</li>
+                    <li className="singleRow"><img src="./media/icons/people.png" className="icons" alt="foty"/>People</li>
                     </Link>
                     }
                     {'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/entities">
-                    <li className="singleRow"><img src="./media/icons/entities2.png" className="icons" alt="fotosy"/>Entities</li>
+                    <li className="singleRow"><img src="./media/icons/entities2.png" className="icons" alt="foty"/>Entities</li>
                     </Link>
                     }
                     {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
@@ -178,27 +178,27 @@ export const ExpandedMenu: FC = () => {
                     <li className="category">Workspaces</li>
                     {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/client_contract">
-                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="fotosy"/>Client contract</li>
+                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="foty"/>Client contract</li>
                     </Link>
                     }
                     {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/supplier_contract">
-                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="fotosy"/>Supplier contract</li>
+                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="foty"/>Supplier contract</li>
                     </Link>
                     }
                     {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/corporate">
-                    <li className="singleRow"><img src="./media/icons/entities2.png" className="icons" alt="fotosy"/>Corporate</li>
+                    <li className="singleRow"><img src="./media/icons/entities2.png" className="icons" alt="foty"/>Corporate</li>
                     </Link>
                     }
                     {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/group_norms">
-                    <li className="singleRow"><img src="./media/icons/book.png" className="icons" alt="fotosy"/>Group Norms</li>
+                    <li className="singleRow"><img src="./media/icons/book.png" className="icons" alt="foty"/>Group Norms</li>
                     </Link>
                     }
                     {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/real_estate_contracts">
-                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="fotosy"/>Real estate contracts</li>
+                    <li className="singleRow"><img src="./media/icons/entities2.png" className="icons" alt="foty"/>Real estate contracts</li>
                     </Link>
                     }
                     </Link>
@@ -206,12 +206,12 @@ export const ExpandedMenu: FC = () => {
 
                     <li className="category">Account</li>
                     <Account>
-                        <img id="portrair" src={usersPhoto[0]?.url} alt="fotosy"/>
+                        <img id="portrair" src={usersPhoto[0]?.url} alt="foty"/>
                         <li id="name">{usersList[0]?.name}</li>
                         <li id="see" ><Link to="/profile">See profile</Link></li>
 
                     </Account>
-                    <Link to="/mock"><li><img src="./media/icons/privacy.png" className="icons" alt="foto"/>Privacy</li></Link>
+                    <Link to="/mock"><li><img src="./media/icons/privacy.png" className="icons" alt="foty"/>Privacy</li></Link>
                     <Link to="/mock"><li><img src="./media/icons/settings.png" className="icons" alt="foty"/>Settings</li></Link>
             </ul>
             <Link to="/mock">

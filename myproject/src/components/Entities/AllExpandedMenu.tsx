@@ -8,7 +8,7 @@ import {Colors} from '../../styledHelpers/Colors';
 const Wrapper = styled.div`
     position: absolute;
     background: ${Colors.black};
-    margin-top:135px;
+    margin-top:125px;
     width:85px;
     z-index: 1;
     display: flex;

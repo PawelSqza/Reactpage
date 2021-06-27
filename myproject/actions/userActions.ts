@@ -54,11 +54,8 @@ export const getComments = (): Promise<ISingleUser[]> => ((dispatch: Dispatch) =
 
 }) as any;
 
-// export const getSomeData = (someData: string):Promise<ISingleUser[]> => ((dispatch: Dispatch) => {
 
-//     dispatch({
-//         type: actionTypes.PUSH_DATA,
-//         someData
-//     })
 
-// }) as any;
+
+
+

@@ -52,13 +52,13 @@ export default (state = defaultState(), action: any) => {
                 usersComment: data.usersComment
             }
         }
-        // case actionTypes.PUSH_DATA: {
-        //     const data: actionTypes.IUserTypes['PUSH_DATA'] = action;
-        //     return {
-        //         ...state,
-        //         someData: data.someData
-        //     }
-        // }
+        
+        
+        
+        
+        
+        
+        
 
         default: {
             return state

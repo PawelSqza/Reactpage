@@ -4,7 +4,7 @@ import {Colors} from '../../styledHelpers/Colors';
 
 
 
-//#region styles
+//styles
 const Wrapper = styled.div`
     position: absolute;
     background: ${Colors.black};
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
 
 
-//#endregion
+
 
 export const FollowedExpandedMenu: FC = () => {
 

@@ -7,7 +7,7 @@ import useDropdown from 'react-dropdown-hook';
 import {FollowedExpandedMenu} from './FollowedExpandedMenu';
 import {boxShadow} from '../../styledHelpers/Components';
 
-//#region import data from api
+// import data from api
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
 import { getUsers, getComments } from '../../actions/userActions';
@@ -15,9 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 type GetUsers = ReturnType<typeof getUsers>
 type GetComments = ReturnType<typeof getComments>
-//#endregion
-
-//#region styles
+////#region styles
 const InnerWrapper = styled.div`
     margin-top:10px;
     max-width:940px;
@@ -56,7 +54,7 @@ const InnerWrapper = styled.div`
         color: ${Colors.purple};
         border: none;
         outline: none;
-        user-select: none; /* no background on double click */
+        user-select: none; 
 
         .previous{
             margin-right:10px;
@@ -112,7 +110,7 @@ const MenuWrapper = styled.div`
     display:flex;
     align-items: center;
     column-gap: 12px;
-    user-select: none; /* no background on double click */
+    user-select: none; 
     font-size: ${fontSize[18]};
     font-weight: bold;
     color:${Colors.purple};
@@ -135,13 +133,13 @@ const Bottom = styled.div`
 //#endregion
 
 export const ResumeYourWork: FC = () => {
-    //#region dropDownMenu
+    // dropDownMenu
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
 
     const menuHandler = () => {
         toggleDropdown();
     };
-    //#endregion
+    
 
 
     const { usersList, usersComment } = useSelector<IState, IUsersReducer>(state => ({
@@ -162,7 +160,7 @@ export const ResumeYourWork: FC = () => {
 
     }
 
-    //#region search function
+    // search function
 
     const [inputText, setInputText] = useState<string>('');
 
@@ -170,7 +168,7 @@ export const ResumeYourWork: FC = () => {
         const text= e.target.value;
         setInputText(text);
     }
-    //#endregion
+    
 
     return (
         <InnerWrapper>

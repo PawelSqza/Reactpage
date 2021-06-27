@@ -13,9 +13,8 @@ import { useDispatch, useSelector } from 'react-redux';
 type GetUsers = ReturnType<typeof getUsers>
 type GetPhotos = ReturnType<typeof getPhotos>
 type GetPosts = ReturnType<typeof getPosts>
-//#endregion
 
-//#region styles
+
 
 const Wrapper = styled.div`
     display:flex;

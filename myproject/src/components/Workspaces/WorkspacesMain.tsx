@@ -61,7 +61,7 @@ const Top = styled.div`
 
 
     .bgPhoto{
-        height:200px;
+        height:180px;
         background-image: url(${data[parseInt(props.type)].photo});
         background-position: center;
         background-size: cover;
@@ -172,12 +172,12 @@ const Box = styled.div`
                     <Box>
                         <img className="imgInBoxes" src="./media/icons/entities.png" alt="Entities icon"/>
                         <h1>Explore your entities</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  perferendis officia harum dolores error illum eos..</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.   harum dolores error illum eos..</p>
                     </Box>
                     <Box>
                         <img className="imgInBoxes" src="./media/imgs/structure.png" alt="Entities icon"/>
                         <h1>Structure the ownership</h1>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo magni odio asperiores eum corrupti error..</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo  asperiores eum corrupti error..</p>
                     </Box>
                     <Box>
                         <img className="imgInBoxes" src="./media/icons/entities.png" alt="Entities icon"/>
