@@ -1,1 +1,2 @@
-# RWeb/tst
+# RWeb
+Pierwsza strona z użyciem techlonogii redux .
